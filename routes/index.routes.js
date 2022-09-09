@@ -1,9 +1,6 @@
 const router = require("express").Router();
+const carRoute = require('./cars.routes')
 
-// router.use('/cars', require('./cars.routes'))
-
-router.get('/cars', (req, res) => {
-    res.send('funciona')
-})
+router.use('/cars', carRoute)
 
 module.exports = router;

@@ -2,8 +2,8 @@ const { Schema, model } = require('mongoose')
 
 const carSchema = new Schema(
     {
-        brand: { type: String, require: true },
-        model: { type: String, required: true },
+        brand: String,
+        model: String,
         image: String,
         generation: String,
         production: String,
