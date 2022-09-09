@@ -7,17 +7,17 @@ const carSchema = new Schema(
         image: String,
         generation: String,
         production: String,
-        typology: {
-            type: String,
-            segment: String,
-            doors: String,
-            carbody: String
-        },
-        Dimensions: {
-            length: Number,
-            width: Number,
-            height: Number
-        }
+        // typology: {
+        //     type: String,
+        //     segment: String,
+        //     doors: String,
+        //     carbody: String
+        // },
+        // Dimensions: {
+        //     length: Number,
+        //     width: Number,
+        //     height: Number
+        //}
     },
     { timestamps: true }
 
