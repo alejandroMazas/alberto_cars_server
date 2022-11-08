@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 
 require('dotenv').config()
 
@@ -7,6 +8,13 @@ require('./db')
 const indexRoutes = require('./routes/index.routes')
 
 const app = express()
+
+app.use(
+    cors({
+        credentials: true,
+        origin: process.env.origin || 'http://localhost:3000'
+    })
+)
 
 app.use(express.json())
 

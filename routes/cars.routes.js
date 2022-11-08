@@ -12,7 +12,7 @@ router.get('/cars', async (req, res) => {
         const allCars = await Cars.find();
         res.json(allCars);
     } catch (error) {
-        res.status(500).json(err)
+        res.status(500).json(error)
     }
 })
 
@@ -29,7 +29,7 @@ router.post('/createCars', async (req, res) => {
         const newCar = await Cars.create({ brand, model, image, generation, production })
         res.json(newCar)
     } catch (error) {
-        res.status(500).json(err)
+        res.status(500).json(error)
     }
 })
 
@@ -46,7 +46,7 @@ router.get('/cars/:id', async (req, res) => {
         const myCar = await Cars.findById(id)
         res.json(myCar)
     } catch (error) {
-        res.status(500).json(err)
+        res.status(500).json(error)
     }
 
 })
@@ -65,7 +65,7 @@ router.put('/cars/:id/update', async (req, res) => {
         const updatedCar = await Cars.findByIdAndUpdate(id, { brand, model, image, generation, production }, { new: true })
         res.json(updatedCar)
     } catch (error) {
-        res.status(500).json(err)
+        res.status(500).json(error)
     }
 })
 
@@ -82,7 +82,7 @@ router.delete('/cars/:id/delete', async (req, res) => {
         const deletedCar = await Cars.findByIdAndDelete(id)
         res.json(deletedCar)
     } catch (error) {
-        res.status(500).json(err)
+        res.status(500).json(error)
     }
 })
 
