@@ -7,17 +7,24 @@ const carSchema = new Schema(
         image: String,
         generation: String,
         production: String,
-        // typology: {
-        //     type: String,
-        //     segment: String,
-        //     doors: String,
-        //     carbody: String
-        // },
-        // Dimensions: {
-        //     length: Number,
-        //     width: Number,
-        //     height: Number
-        //}
+
+        carType: String,
+        segment: String,
+        doors: String,
+        carbody: String,
+
+        carLength: Number,
+        width: Number,
+        height: Number,
+        battle: Number,
+        plazas: Number,
+        distribution: String,
+
+        motor: String,
+        mechanic: String,
+        propulsion: String,
+        carfuel: String
+
     },
     { timestamps: true }
 

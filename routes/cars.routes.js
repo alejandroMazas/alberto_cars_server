@@ -18,7 +18,27 @@ router.get('/cars', async (req, res) => {
 
 router.post('/createCars', async (req, res) => {
 
-    const { brand, model, image, generation, production } = req.body
+    const {
+        brand,
+        model,
+        image,
+        generation,
+        production,
+        carType,
+        segment,
+        doors,
+        carbpdy,
+        length,
+        width,
+        heigth,
+        battle,
+        plazas,
+        distribution,
+        motor,
+        mechanic,
+        propulsion,
+        carfuel
+    } = req.body
 
     // Cars
     //     .create({ brand, model, image, generation, production })
@@ -26,7 +46,27 @@ router.post('/createCars', async (req, res) => {
     //     .catch(err => res.status(500).json(err))
 
     try {
-        const newCar = await Cars.create({ brand, model, image, generation, production })
+        const newCar = await Cars.create({
+            brand,
+            model,
+            image,
+            generation,
+            production,
+            carType,
+            segment,
+            doors,
+            carbpdy,
+            length,
+            width,
+            heigth,
+            battle,
+            plazas,
+            distribution,
+            motor,
+            mechanic,
+            propulsion,
+            carfuel
+        })
         res.json(newCar)
     } catch (error) {
         res.status(500).json(error)
