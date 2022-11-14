@@ -55,8 +55,8 @@ router.post('/createCars', async (req, res) => {
             carType,
             segment,
             doors,
-            carbpdy,
-            length,
+            carbody,
+            carLength,
             width,
             heigth,
             battle,
@@ -102,7 +102,28 @@ router.put('/cars/:id/update', async (req, res) => {
     //     .catch(err => res.status(500).json(err))
 
     try {
-        const updatedCar = await Cars.findByIdAndUpdate(id, { brand, model, image, generation, production }, { new: true })
+        const updatedCar = await Cars.findByIdAndUpdate(id, {
+            brand,
+            model,
+            image,
+            generation,
+            production,
+            carType,
+            segment,
+            doors,
+            carbody,
+            carLength,
+            width,
+            heigth,
+            battle,
+            plazas,
+            distribution,
+            motor,
+            mechanic,
+            propulsion,
+            carfuel
+        },
+            { new: true })
         res.json(updatedCar)
     } catch (error) {
         res.status(500).json(error)
