@@ -3,6 +3,7 @@ const bcrypt = require('bcryptjs')
 const User = require('../models/user.model')
 const router = require('./cars.routes')
 const jwt = require('jsonwebtoken')
+const { isAuthenticated } = require('../midlewares/jwt.midleware')
 
 
 const Router = express.Router()
@@ -80,6 +81,10 @@ router.post('/login', (req, res) => {
             res.status(500).json({ message: "Internal Server Error" })
         })
 
+})
+
+router.get('/verify', isAuthenticated, (req, res) => {
+    res.status(200).json(req.payload)
 })
 
 module.exports = Router
