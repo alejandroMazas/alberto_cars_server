@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs')
 const User = require('../models/user.model')
 const router = require('./cars.routes')
 const jwt = require('jsonwebtoken')
-const { isAuthenticated } = require('../midlewares/jwt.midleware')
+const { isAuthenticated } = require('../middlewares/jwt.middleware')
 
 
 const Router = express.Router()
@@ -48,6 +48,8 @@ router.post('/signup', (req, res) => {
 })
 
 router.post('/login', (req, res) => {
+
+    const { email, password } = req.body
 
     if (email === "" || password === "") {
         res.status(400).json({ message: 'Insert an email and a password' })
